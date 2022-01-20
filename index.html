@@ -43,7 +43,6 @@
   </script> -->
 
    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-
   <script>
     function createUniversalLink() {
     }
@@ -70,6 +69,11 @@
     }
 
     function getContext() {
+      document.getElementById("type").append(liff.getContext().type)
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      document.getElementById("utouId").append(liff.getContext().utouId)
+      document.getElementById("roomId").append(liff.getContext().roomId)
+      document.getElementById("groupId").append(liff.getContext().groupId)
     }
 
     async function getUserProfile() {
@@ -78,6 +82,7 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
 
     function getEnvironment() {
@@ -94,16 +99,13 @@
       document.getElementById("btnMsg").style.display = "none"
       document.getElementById("btnScanCode").style.display = "none"
       document.getElementById("btnClose").style.display = "none"
-
       }
-
     }
-
     async function main() {
       await liff.init({ liffId:"1656823949-lVJd95jk"})
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
