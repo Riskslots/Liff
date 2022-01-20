@@ -9,7 +9,7 @@
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>ภาษา:</b> </p>
-  <p id="version"><b>Version:</b> </p>
+  <p id="version"><b>เวอชั่น:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
   <p id="accessToken"><b>AccessToken:</b> </p>
   <img id="pictureUrl">
@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -66,6 +66,16 @@
     }
 
     async function sendMsg() {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessage([
+          {
+            "type":"sticker",
+            "stickerid":1,
+            "packageid":1
+          }
+        ])
+        alert("Message sent")
+      }
     }
 
     function getContext() {
@@ -92,7 +102,7 @@
       document.getElementById("accessToken").append(liff.getAccessToken())
       document.getElementById("isInClient").append(liff.getisInClient())
 
-      if (liff.isInClient()){
+      if (liff.isInClient()) {
         document.getElementById("btnLogOut").style.display = "none"
 
       } else { 
