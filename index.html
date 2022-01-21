@@ -113,6 +113,142 @@
     }
     async function main() {
       await liff.init({ liffId:"1656823949-lVJd95jk"})
+      await liff.shareTargetPicker([
+      {
+        type:"flex",
+        altText:"Flex Message from Share Target Picker",
+        contents:{
+  "type": "flex",
+  "altText": "this is a flex message",
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "image",
+              "url": "https://i.imgur.com/PKcJs18.png",
+              "size": "5xl",
+              "aspectMode": "cover",
+              "aspectRatio": "4:3",
+              "gravity": "center"
+            },
+            {
+              "type": "text",
+              "text": "กยส.กองทุนกู้ยืมสล็อตออนไลน์",
+              "color": "#898989",
+              "size": "xs",
+              "align": "center",
+              "margin": "md"
+            },
+            {
+              "type": "separator",
+              "margin": "lg",
+              "color": "#8e2525"
+            }
+          ],
+          "cornerRadius": "md"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "<<p_profile_img_url>>",
+                  "aspectMode": "cover",
+                  "size": "full"
+                }
+              ],
+              "cornerRadius": "100px",
+              "width": "72px",
+              "height": "72px"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "contents": [],
+                  "wrap": true,
+                  "text": "<<p_display_name>>",
+                  "size": "lg"
+                },
+                {
+                  "type": "text",
+                  "text": "วงเงินที่คุณกู้ได้",
+                  "color": "#caa677",
+                  "wrap": true
+                },
+                {
+                  "type": "text",
+                  "text": "500฿",
+                  "wrap": true,
+                  "weight": "bold",
+                  "size": "xxl"
+                },
+                {
+                  "type": "text",
+                  "text": "กดแนะนำ 1000Cr กู้ได้ 100฿ คืน 130฿/3วัน คืนแล้วยืมต่อได้",
+                  "color": "#bcbcbc",
+                  "size": "xxs",
+                  "wrap": true
+                }
+              ],
+              "margin": "lg"
+            }
+          ],
+          "margin": "lg"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "message",
+                "label": "ลงทะเบียน",
+                "text": "ลงทะเบียนสมาชิกใหม่"
+              },
+              "style": "primary",
+              "color": "#e0bf00",
+              "height": "sm"
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "เข้าสู่ระบบ",
+                "uri": "https://liff.line.me/1656773781-YAz6bGaa"
+              },
+              "style": "primary",
+              "color": "#8f8f8f",
+              "height": "sm",
+              "margin": "md"
+            }
+          ],
+          "margin": "lg"
+        }
+      ],
+      "paddingAll": "7px"
+    }
+  }
+}
+      }  
+      ])
+      liff.closeWindow()
+
       getEnvironment()
       getUserProfile()
       getContext()
